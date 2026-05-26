@@ -119,6 +119,7 @@ class MainActivity : AppCompatActivity() {
             for (i in 0..<main_IMG_hearts.size) {
                 main_IMG_hearts[i].visibility = View.VISIBLE
             }
+            initTimer()
         }
 
         // Enemy Position
@@ -166,6 +167,11 @@ class MainActivity : AppCompatActivity() {
     private fun tickGame() {
         gameManager.checkHit()
         gameManager.proceed()
+
+        if (gameManager.isGameOver) {
+            timer.cancel()
+        }
+
         runOnUiThread {
             refreshUI()
         }
