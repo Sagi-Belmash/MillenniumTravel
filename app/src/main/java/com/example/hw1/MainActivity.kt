@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.hw1.logic.GameManager
 import com.example.hw1.utilities.Constants
+import com.example.hw1.utilities.SignalManager
 import com.google.android.material.button.MaterialButton
 import java.util.Timer
 import java.util.TimerTask
@@ -113,7 +114,7 @@ class MainActivity : AppCompatActivity() {
     private fun refreshUI() {
         // Game Over
         if (gameManager.isGameOver) {
-            Toast.makeText(this, "Game Over!\nYou survived for: $elapsedTime seconds!", Toast.LENGTH_SHORT).show()
+            gameOver();
             gameManager = GameManager(main_IMG_hearts.size, main_IMG_enemies.size, main_IMG_enemies[0].size)
             elapsedTime.set(0)
             for (i in 0..<main_IMG_hearts.size) {
@@ -175,5 +176,11 @@ class MainActivity : AppCompatActivity() {
         runOnUiThread {
             refreshUI()
         }
+    }
+
+    private fun gameOver() {
+
+        SignalManager.getInstance().toast("Game Over!\nYou survived for: $elapsedTime seconds!", SignalManager.ToastLength.SHORT)
+        SignalManager.getInstance().vibrate()
     }
 }
