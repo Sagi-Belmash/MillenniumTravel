@@ -39,191 +39,409 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="40dp"
+        android:id="@+id/lane_0">
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_0_0"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_0_1"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_0_2"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_0_3"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_0_4"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_0_5"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_0_6"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_0_7"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_0_8"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:id="@+id/ship_0"
             app:srcCompat="@drawable/player_ship"
             android:visibility="invisible"/>
-
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lane_1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/lane_0"
+        android:layout_toStartOf="@+id/lane_2"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_1_0"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_1_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_1_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_1_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_1_4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_1_5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_1_6"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_1_7"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_1_8"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/ship_1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/player_ship" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="40dp"
+        android:id="@+id/lane_2">
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/enemy_1_0"
-            app:srcCompat="@drawable/enemy_ship"
-            android:visibility="invisible"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/enemy_1_1"
-            app:srcCompat="@drawable/enemy_ship"
-            android:visibility="invisible"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/enemy_1_2"
-            app:srcCompat="@drawable/enemy_ship"
-            android:visibility="invisible"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/enemy_1_3"
-            app:srcCompat="@drawable/enemy_ship"
-            android:visibility="invisible"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/enemy_1_4"
-            app:srcCompat="@drawable/enemy_ship"
-            android:visibility="invisible"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/enemy_1_5"
-            app:srcCompat="@drawable/enemy_ship"
-            android:visibility="invisible"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:id="@+id/ship_1"
-            app:srcCompat="@drawable/player_ship"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="40dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_2_0"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_2_1"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_2_2"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_2_3"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_2_4"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:id="@+id/enemy_2_5"
             app:srcCompat="@drawable/enemy_ship"
             android:visibility="invisible"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_2_6"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_2_7"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_2_8"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:id="@+id/ship_2"
+            app:srcCompat="@drawable/player_ship"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lane_3"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_toStartOf="@+id/lane_4"
+        android:layout_toEndOf="@+id/lane_2"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_0"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_7"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/enemy_3_8"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/enemy_ship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/ship_3"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/player_ship" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/lane_4">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_0"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_1"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_2"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_3"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_4"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_5"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_6"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_7"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/enemy_4_8"
+            app:srcCompat="@drawable/enemy_ship"
+            android:visibility="invisible"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/ship_4"
             app:srcCompat="@drawable/player_ship"
             android:visibility="invisible"/>
     </LinearLayout>
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:contentDescription="Left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:icon="@drawable/arrow_left"
-        android:id="@+id/btn_left"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/yellow"
-        tools:ignore="HardcodedText" />
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:contentDescription="Right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:icon="@drawable/arrow_right"
-        android:id="@+id/btn_right"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/yellow"
-        tools:ignore="HardcodedText" />
-
-
-
 </RelativeLayout>
