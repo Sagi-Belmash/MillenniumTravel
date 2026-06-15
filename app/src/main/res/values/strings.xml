@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">HW1</string>
+    <string name="app_name">Millennium Travel</string>
+    <string name="app_title">Millennium\nTravel</string>
+    <string name="tilt_mode">Tilt Mode</string>
+    <string name="buttons_mode">Buttons Mode</string>
+    <string name="leaderboard">Leaderboard</string>
 </resources>

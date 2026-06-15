@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HW1"
+rootProject.name = "MillenniumTravel"
 include(":app")
  

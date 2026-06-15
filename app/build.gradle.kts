@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.hw1"
+    namespace = "com.example.MillenniumTravel"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.hw1"
+        applicationId = "com.example.MillenniumTravel"
         minSdk = 36
         targetSdk = 36
         versionCode = 1
@@ -42,11 +42,13 @@ android {
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.material)
@@ -57,4 +59,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.gson)
 }

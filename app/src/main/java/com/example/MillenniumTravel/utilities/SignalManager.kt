@@ -1,7 +1,6 @@
-package com.example.hw1.utilities
+package com.example.MillenniumTravel.utilities
 
 import android.content.Context
-import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
