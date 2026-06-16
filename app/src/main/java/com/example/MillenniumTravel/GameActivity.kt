@@ -1,24 +1,37 @@
 package com.example.MillenniumTravel
 
+import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.location.Location
+import android.location.LocationManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.location.LocationManagerCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.MillenniumTravel.interfaces.Callback_TiltCallback
 import com.example.MillenniumTravel.logic.GameManager
+import com.example.MillenniumTravel.models.HighScore
 import com.example.MillenniumTravel.utilities.BackgroundMusicPlayer
 import com.example.MillenniumTravel.utilities.Constants
+import com.example.MillenniumTravel.utilities.SharedPreferencesManager
 import com.example.MillenniumTravel.utilities.SignalManager
 import com.example.MillenniumTravel.utilities.SingleSoundPlayer
 import com.example.MillenniumTravel.utilities.TiltDetector
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import java.util.concurrent.atomic.AtomicLong
 import kotlin.math.sign
 
@@ -43,6 +56,10 @@ class GameActivity : AppCompatActivity() {
     private val timerHandler: Handler = Handler(Looper.getMainLooper())
     private lateinit var timerRunnable: Runnable
 
+    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private var location: LatLng = LatLng(-33.8523341, 151.2106085)
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -58,6 +75,8 @@ class GameActivity : AppCompatActivity() {
         initViews()
 
         gameManager = GameManager(game_IMG_hearts.size, game_IMG_enemies.size, game_IMG_enemies[0].size)
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
         initTiltDetector()
         initTimer()
@@ -291,8 +310,42 @@ class GameActivity : AppCompatActivity() {
         SignalManager.getInstance().toast("Game Over!\nYou traveled ${game_LBL_score.text}!", SignalManager.ToastLength.LONG)
         SignalManager.getInstance().vibrate()
 
+        val sp = SharedPreferencesManager.getInstance()
+        val jsonString = sp.getString(Constants.SP_KEYS.HIGHSCORES_KEY, "[]")
+        val type = object : TypeToken<List<HighScore>>() {}.type
+        val savedHighScores: MutableList<HighScore> = Gson().fromJson<List<HighScore>>(jsonString, type).toMutableList()
+
+        val currentScore = elapsedTime.toInt()
+
+        if (savedHighScores.size < 10 || currentScore > savedHighScores.last().score) {
+            val newHighScore: HighScore = HighScore.Builder(currentScore, location).build()
+            savedHighScores.add(newHighScore)
+            savedHighScores.sortByDescending { it.score }
+            if (savedHighScores.size > 10)
+                savedHighScores.removeLast()
+            val updatedJson = Gson().toJson(savedHighScores)
+            sp.putString(Constants.SP_KEYS.HIGHSCORES_KEY, updatedJson)
+        }
+
+
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun getDeviceLocation() {
+        try {
+            val locationResult = fusedLocationProviderClient.lastLocation
+            locationResult.addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    location = LatLng(task.result.latitude, task.result.longitude)
+                } else {
+                    Log.d(TAG, "Current location is null. Using defaults.")
+                    Log.e(TAG, "Exception: %s", task.exception)
+                }
+            }
+        } catch (e: SecurityException) {
+            Log.e("Exception: %s", e.message, e)
+        }
     }
 }

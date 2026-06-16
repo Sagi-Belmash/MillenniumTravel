@@ -7,8 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.MillenniumTravel.R
 import com.example.MillenniumTravel.interfaces.Callback_HighScoreClicked
+import com.example.MillenniumTravel.models.HighScore
+import com.example.MillenniumTravel.utilities.Constants
+import com.example.MillenniumTravel.utilities.SharedPreferencesManager
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 
 class HighScoreFragment : Fragment() {
@@ -48,20 +53,16 @@ class HighScoreFragment : Fragment() {
     }
 
     private fun initViews() {
-        object a: View.OnClickListener {
-            override fun onClick(p0: View?) {
-                var coordinates = coordinatesStrings[i].split(",")
-                var lat: Double = coordinates?.getOrNull(0)?.toDoubleOrNull() ?: 0.0
-                var lng: Double = coordinates?.getOrNull(1)?.toDoubleOrNull() ?: 0.0
-            }
 
-        }
-        for (i in (0..9)) {
-            hs_BTN_items[i].setOnClickListener
-        }
+        val sp = SharedPreferencesManager.getInstance()
+        val jsonString = sp.getString(Constants.SP_KEYS.HIGHSCORES_KEY, "[]")
+        val type = object : TypeToken<List<HighScore>>() {}.type
+        val savedHighScores: List<HighScore> = Gson().fromJson(jsonString, type)
 
-        { v ->
-
+        var scoreString: String
+        for (i in (0..savedHighScores.size)) {
+            scoreString = if (savedHighScores[i].score < 10) "${savedHighScores[i].score * 100}m" else "${savedHighScores[i].score.toFloat() / 10}km"
+            hs_BTN_items[i].text = scoreString
         }
     }
 }
