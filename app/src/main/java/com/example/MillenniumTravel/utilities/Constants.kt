@@ -11,7 +11,7 @@ class Constants {
     }
 
     object SP_KEYS {
-        const val HIGHSCORES_KEY: String = "PLAYLIST_KEY"
+        const val HIGHSCORES_KEY: String = "HIGHSCORES_KEY"
         const val DATA_FILE: String = "DATA_FILE"
     }
 }

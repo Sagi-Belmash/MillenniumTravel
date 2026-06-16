@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LeaderboardActivity">
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/highscores_TXT_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Top 10 High Scores"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:padding="16dp" />
-    <FrameLayout
-        android:id="@+id/lb_FRAME_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/yellow"
-        />
+    tools:context=".LeaderboardActivity"
+    android:background="@drawable/activity_background">
 
-    <FrameLayout
-        android:id="@+id/lb_FRAME_map"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/white"
-        />
-</androidx.appcompat.widget.LinearLayoutCompat>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/highscores_TXT_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/leaderboard_title"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textColor="@color/yellow"
+            android:fontFamily="@font/starjout"/>
+        <FrameLayout
+            android:id="@+id/lb_FRAME_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/yellow"
+            />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <FrameLayout
+            android:id="@+id/lb_FRAME_map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:icon="@drawable/home"
+        app:iconSize="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="Home"
+        android:backgroundTint="@color/yellow"
+        android:id="@+id/lb_BTN_home"/>
+</RelativeLayout>

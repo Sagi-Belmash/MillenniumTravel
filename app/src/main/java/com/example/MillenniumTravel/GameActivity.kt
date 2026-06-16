@@ -57,8 +57,7 @@ class GameActivity : AppCompatActivity() {
     private lateinit var timerRunnable: Runnable
 
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
-    private var location: LatLng = LatLng(-33.8523341, 151.2106085)
-
+    private var location: LatLng = LatLng(32.114965179298, 34.81860279084453)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +76,7 @@ class GameActivity : AppCompatActivity() {
         gameManager = GameManager(game_IMG_hearts.size, game_IMG_enemies.size, game_IMG_enemies[0].size)
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        getDeviceLocation()
 
         initTiltDetector()
         initTimer()

@@ -1,7 +1,9 @@
 <resources>
+    <string name="temp_text">Temp</string>
     <string name="app_name">Millennium Travel</string>
     <string name="app_title">Millennium\nTravel</string>
     <string name="tilt_mode">Tilt Mode</string>
     <string name="buttons_mode">Buttons Mode</string>
     <string name="leaderboard">Leaderboard</string>
+    <string name="leaderboard_title">Top 10 High Scores</string>
 </resources>

@@ -10,6 +10,7 @@ import com.example.MillenniumTravel.interfaces.Callback_HighScoreClicked
 import com.example.MillenniumTravel.models.HighScore
 import com.example.MillenniumTravel.utilities.Constants
 import com.example.MillenniumTravel.utilities.SharedPreferencesManager
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.Gson
@@ -17,10 +18,21 @@ import com.google.gson.reflect.TypeToken
 
 
 class HighScoreFragment : Fragment() {
+    companion object {
+        private lateinit var hs_BTN_items: Array<MaterialButton>
+        private var coordinates : MutableList<LatLng> = mutableListOf()
+        var highScoreItemClicked: Callback_HighScoreClicked? = null
+    }
 
-    private lateinit var hs_BTN_items: Array<MaterialButton>
-    private lateinit var coordinatesStrings : Array<String> // Delete later
-    // private lateinit var coordinates : List<List<String>>
+    object HighScoreClickListener : View.OnClickListener {
+        override fun onClick(v: View?) {
+            val index: Int = hs_BTN_items.indexOf(v)
+            val lat: Double = coordinates[index].latitude
+            val lon: Double = coordinates[index].longitude
+
+            highScoreItemClicked?.highScoreItemClicked(lat, lon)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,16 +65,18 @@ class HighScoreFragment : Fragment() {
     }
 
     private fun initViews() {
-
         val sp = SharedPreferencesManager.getInstance()
         val jsonString = sp.getString(Constants.SP_KEYS.HIGHSCORES_KEY, "[]")
         val type = object : TypeToken<List<HighScore>>() {}.type
         val savedHighScores: List<HighScore> = Gson().fromJson(jsonString, type)
 
         var scoreString: String
-        for (i in (0..savedHighScores.size)) {
+        for (i in (0..<savedHighScores.size)) {
             scoreString = if (savedHighScores[i].score < 10) "${savedHighScores[i].score * 100}m" else "${savedHighScores[i].score.toFloat() / 10}km"
             hs_BTN_items[i].text = scoreString
+            hs_BTN_items[i].visibility = View.VISIBLE
+            hs_BTN_items[i].setOnClickListener(HighScoreClickListener)
+            coordinates.add(savedHighScores[i].location)
         }
     }
 }
