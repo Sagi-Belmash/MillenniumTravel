@@ -54,3 +54,7 @@ When there are too many scores and some of them are hidden, you can scroll down 
 <div align="center">
   <img src="screenshots/leaderboard.png" width="300" alt="Leaderboard">
 </div>
+
+## ⚠️ Limitations
+- The app only works for devices with SDK 36 and above.
+- The device's orientation should be locked, or else the game will break.
