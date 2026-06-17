@@ -337,7 +337,7 @@ class GameActivity : AppCompatActivity() {
         try {
             val locationResult = fusedLocationProviderClient.lastLocation
             locationResult.addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
+                if (task.isSuccessful && task.result != null) {
                     location = LatLng(task.result.latitude, task.result.longitude)
                 } else {
                     Log.d(TAG, "Current location is null. Using defaults.")
