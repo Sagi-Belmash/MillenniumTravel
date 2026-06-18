@@ -68,7 +68,7 @@ class HighScoreFragment : Fragment() {
         val sp = SharedPreferencesManager.getInstance()
         val jsonString = sp.getString(Constants.SP_KEYS.HIGHSCORES_KEY, "[]")
         val type = object : TypeToken<List<HighScore>>() {}.type
-        val savedHighScores: List<HighScore> = Gson().fromJson(jsonString, type)
+        val savedHighScores: List<HighScore> = Gson().fromJson(jsonString, type) ?: emptyList()
 
         var scoreString: String
         for (i in (0..<savedHighScores.size)) {
