@@ -304,10 +304,13 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun gameOver() {
+        val currentScore = elapsedTime.toInt()
+        val scoreText = if (currentScore < 10) "${currentScore * 100}m" else "${currentScore / 10}km"
+
         BackgroundMusicPlayer.getInstance().stopMusic()
         val ssp = SingleSoundPlayer(this)
         ssp.playSound(R.raw.explosion)
-        SignalManager.getInstance().toast("Game Over!\nYou traveled ${game_LBL_score.text}!", SignalManager.ToastLength.LONG)
+        SignalManager.getInstance().toast("Game Over!\nYou've traveled ${scoreText}!", SignalManager.ToastLength.LONG)
         SignalManager.getInstance().vibrate()
 
         val sp = SharedPreferencesManager.getInstance()
@@ -315,7 +318,6 @@ class GameActivity : AppCompatActivity() {
         val type = object : TypeToken<List<HighScore>>() {}.type
         val savedHighScores: MutableList<HighScore> = Gson().fromJson<List<HighScore>>(jsonString, type).toMutableList()
 
-        val currentScore = elapsedTime.toInt()
 
         if (savedHighScores.size < 10 || currentScore > savedHighScores.last().score) {
             val newHighScore: HighScore = HighScore.Builder(currentScore, location).build()
